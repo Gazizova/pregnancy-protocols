@@ -1,0 +1,48 @@
+:root {
+  /* Categories */
+  --cat-analysis-bg: oklch(0.95 0.035 165);
+  --cat-analysis-text: oklch(0.4 0.09 165);
+  --cat-analysis-dot: oklch(0.64 0.1 165);
+
+  --cat-uzd-bg: oklch(0.95 0.03 285);
+  --cat-uzd-text: oklch(0.42 0.1 285);
+  --cat-uzd-dot: oklch(0.62 0.11 285);
+
+  --cat-visit-bg: oklch(0.95 0.035 55);
+  --cat-visit-text: oklch(0.45 0.09 55);
+  --cat-visit-dot: oklch(0.68 0.1 55);
+
+  --cat-vaccine-bg: oklch(0.95 0.035 15);
+  --cat-vaccine-text: oklch(0.45 0.1 15);
+  --cat-vaccine-dot: oklch(0.65 0.1 15);
+
+  --status-required: oklch(0.5 0.1 165);
+  --status-optional: oklch(0.58 0.12 55);
+
+  /* Trimesters */
+  --tri1-bg: oklch(0.96 0.025 165);
+  --tri1-accent: oklch(0.42 0.09 165);
+  --tri2-bg: oklch(0.96 0.025 55);
+  --tri2-accent: oklch(0.46 0.09 55);
+  --tri3-bg: oklch(0.96 0.02 285);
+  --tri3-accent: oklch(0.42 0.08 285);
+
+  /* Neutrals */
+  --text-primary: oklch(0.22 0.02 260);
+  --text-secondary: oklch(0.5 0.02 260);
+  --page-bg: oklch(0.96 0.012 130);
+  --card-bg: #fff;
+
+  /* Radius */
+  --radius-card: 22px;
+  --radius-band: 20px;
+  --radius-modal: 16px;
+  --radius-pill: 999px;
+
+  /* Shadows */
+  --shadow-card: 0 1px 2px oklch(0.2 0.02 260 / 0.03), 0 10px 24px oklch(0.2 0.02 260 / 0.05);
+  --shadow-header: 0 1px 3px oklch(0.2 0.02 260 / 0.08), 0 8px 24px oklch(0.2 0.02 260 / 0.05);
+
+  /* Typography */
+  --font-base: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
