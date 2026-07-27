@@ -5,26 +5,26 @@ export default function Toggle({ checked, onChange }) {
       aria-checked={checked}
       onClick={() => onChange(!checked)}
       style={{
+        cursor: 'pointer',
         position: 'relative',
         width: 34,
         height: 20,
-        borderRadius: 'var(--radius-pill)',
+        borderRadius: 999,
         border: 'none',
         padding: 0,
-        background: checked ? 'var(--status-required)' : 'oklch(0.85 0.01 260)',
-        transition: 'background .15s',
+        display: 'inline-block',
+        background: checked ? 'oklch(0.62 0.11 285)' : 'oklch(0.85 0.01 260)',
       }}
     >
       <span
         style={{
           position: 'absolute',
           top: 2,
-          left: checked ? 16 : 2,
+          left: checked ? 18 : 2,
           width: 16,
           height: 16,
           borderRadius: '50%',
-          background: '#fff',
-          boxShadow: '0 1px 2px oklch(0.2 0.02 260 / 0.3)',
+          background: 'white',
           transition: 'left .15s',
         }}
       />

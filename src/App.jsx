@@ -9,9 +9,9 @@ export default function App() {
     <HashRouter>
       <Routes>
         <Route path="/" element={<Navigate to="/ukraine" replace />} />
-        <Route path="/ukraine" element={<ProtocolPage {...ukraineProtocol} />} />
-        <Route path="/nice" element={<ProtocolPage {...niceProtocol} />} />
-        <Route path="/acog" element={<ProtocolPage {...acogProtocol} />} />
+        <Route path="/ukraine" element={<ProtocolPage protocol={ukraineProtocol} />} />
+        <Route path="/nice" element={<ProtocolPage protocol={niceProtocol} />} />
+        <Route path="/acog" element={<ProtocolPage protocol={acogProtocol} />} />
       </Routes>
     </HashRouter>
   )

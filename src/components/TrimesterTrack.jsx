@@ -1,62 +1,57 @@
 import Card from './Card'
-import { TRIMESTER_STYLE } from '../data/categoryStyle'
 
-export default function TrimesterTrack({ trimester, items, expanded, onToggleExpand, onOpenModal, otherLabel }) {
-  const style = TRIMESTER_STYLE[trimester.number]
+export default function TrimesterTrack({ trimester, items, protocol, expanded, onToggleExpand, onOpenModal }) {
   const width = items.length * 266 - 16
 
   return (
-    <div style={{ flexShrink: 0 }}>
+    <div style={{ display: 'flex', flexDirection: 'column' }}>
       <div
         style={{
           width,
-          borderRadius: 'var(--radius-band)',
-          background: style.bg,
-          color: style.accent,
-          textAlign: 'center',
-          padding: '10px 0',
-          fontWeight: 700,
-          fontSize: 14,
-          marginBottom: 20,
+          boxSizing: 'border-box',
+          borderRadius: 20,
+          background: trimester.bg,
+          color: trimester.accent,
+          display: 'flex',
+          alignItems: 'baseline',
+          justifyContent: 'center',
+          gap: 10,
+          flexWrap: 'wrap',
+          padding: '16px 26px',
+          marginBottom: 22,
         }}
       >
-        {style.emoji} {trimester.label} · {trimester.weeks}
+        <span style={{ fontSize: 16 }}>{trimester.emoji}</span>
+        <span style={{ fontSize: 14, fontWeight: 700, letterSpacing: '.06em', textTransform: 'uppercase' }}>{trimester.label}</span>
+        <span style={{ fontSize: 14, opacity: 0.75 }}>· {trimester.range}</span>
       </div>
 
-      <div style={{ position: 'relative' }}>
+      <div style={{ position: 'relative', display: 'flex', gap: 16, alignItems: 'flex-start', paddingTop: 16 }}>
         <svg
           viewBox="0 0 100 40"
           preserveAspectRatio="none"
-          style={{
-            position: 'absolute',
-            top: 40,
-            left: 0,
-            width,
-            height: 80,
-            zIndex: 0,
-          }}
+          style={{ position: 'absolute', left: 0, right: 0, top: 36, width: '100%', height: 40, zIndex: 0 }}
         >
           <path
-            d="M0,20 Q25,0 50,20 T100,20"
+            d="M0,20 Q 8,4 16,20 T 32,20 T 48,20 T 64,20 T 80,20 T 96,20 T 112,20"
             fill="none"
-            stroke={style.accent}
+            stroke={trimester.accent}
             strokeOpacity="0.35"
-            strokeWidth="2"
+            strokeWidth="1.6"
+            strokeLinecap="round"
           />
         </svg>
 
-        <div style={{ display: 'flex', gap: 16, position: 'relative', zIndex: 1 }}>
-          {items.map((item) => (
-            <Card
-              key={item.id}
-              item={item}
-              expanded={!!expanded[item.id]}
-              onToggleExpand={onToggleExpand}
-              onOpenModal={onOpenModal}
-              otherLabel={otherLabel}
-            />
-          ))}
-        </div>
+        {items.map((item) => (
+          <Card
+            key={item.id}
+            item={item}
+            protocol={protocol}
+            expanded={!!expanded[item.id]}
+            onToggleExpand={onToggleExpand}
+            onOpenModal={(modalId) => onOpenModal(modalId)}
+          />
+        ))}
       </div>
     </div>
   )

@@ -1,50 +1,23 @@
-export function categoryStyle(category, otherLabel = 'Інше') {
-  switch (category) {
-    case 'analysis':
-      return {
-        bg: 'var(--cat-analysis-bg)',
-        text: 'var(--cat-analysis-text)',
-        dot: 'var(--cat-analysis-dot)',
-        icon: 'test-tube',
-        label: 'Аналізи',
-      }
-    case 'uzd':
-      return {
-        bg: 'var(--cat-uzd-bg)',
-        text: 'var(--cat-uzd-text)',
-        dot: 'var(--cat-uzd-dot)',
-        icon: 'activity-wave',
-        label: 'УЗД',
-      }
-    case 'visit':
-      return {
-        bg: 'var(--cat-visit-bg)',
-        text: 'var(--cat-visit-text)',
-        dot: 'var(--cat-visit-dot)',
-        icon: 'clipboard',
-        label: otherLabel,
-      }
-    case 'vaccine':
-      return {
-        bg: 'var(--cat-vaccine-bg)',
-        text: 'var(--cat-vaccine-text)',
-        dot: 'var(--cat-vaccine-dot)',
-        icon: 'syringe',
-        label: 'Вакцинація',
-      }
-    default:
-      return {
-        bg: 'var(--cat-visit-bg)',
-        text: 'var(--cat-visit-text)',
-        dot: 'var(--cat-visit-dot)',
-        icon: 'clipboard',
-        label: otherLabel,
-      }
-  }
+export const UA_CATEGORY_MAP = {
+  'аналізи': { bg: 'oklch(0.95 0.035 165)', color: 'oklch(0.4 0.09 165)', dot: 'oklch(0.64 0.1 165)', kind: 'lab' },
+  'УЗД': { bg: 'oklch(0.95 0.03 285)', color: 'oklch(0.42 0.1 285)', dot: 'oklch(0.62 0.11 285)', kind: 'usg' },
+  'інше': { bg: 'oklch(0.95 0.035 55)', color: 'oklch(0.45 0.09 55)', dot: 'oklch(0.68 0.1 55)', kind: 'visit' },
+  'вакцинація': { bg: 'oklch(0.95 0.035 15)', color: 'oklch(0.45 0.1 15)', dot: 'oklch(0.65 0.1 15)', kind: 'vaccine' },
+}
+
+export const INTL_CATEGORY_MAP = {
+  'аналізи': { bg: 'oklch(0.95 0.035 165)', color: 'oklch(0.4 0.09 165)', dot: 'oklch(0.64 0.1 165)', kind: 'lab' },
+  'УЗД': { bg: 'oklch(0.95 0.03 285)', color: 'oklch(0.42 0.1 285)', dot: 'oklch(0.62 0.11 285)', kind: 'usg' },
+  'візит': { bg: 'oklch(0.95 0.035 55)', color: 'oklch(0.45 0.09 55)', dot: 'oklch(0.68 0.1 55)', kind: 'visit' },
+  'вакцинація': { bg: 'oklch(0.95 0.035 15)', color: 'oklch(0.45 0.1 15)', dot: 'oklch(0.65 0.1 15)', kind: 'vaccine' },
+}
+
+export function categoryStyle(categoryMap, category, fallbackCategory) {
+  return categoryMap[category] || (fallbackCategory ? categoryMap[fallbackCategory] : undefined)
 }
 
 export const TRIMESTER_STYLE = {
-  1: { bg: 'var(--tri1-bg)', accent: 'var(--tri1-accent)', emoji: '🌱' },
-  2: { bg: 'var(--tri2-bg)', accent: 'var(--tri2-accent)', emoji: '☀️' },
-  3: { bg: 'var(--tri3-bg)', accent: 'var(--tri3-accent)', emoji: '🌙' },
+  1: { bg: 'oklch(0.96 0.025 165)', accent: 'oklch(0.42 0.09 165)', emoji: '🌱' },
+  2: { bg: 'oklch(0.96 0.025 55)', accent: 'oklch(0.46 0.09 55)', emoji: '☀️' },
+  3: { bg: 'oklch(0.96 0.02 285)', accent: 'oklch(0.42 0.08 285)', emoji: '🌙' },
 }
