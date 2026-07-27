@@ -9,7 +9,7 @@ const LINKS = [
 export default function Nav() {
   const { pathname } = useLocation()
   return (
-    <div style={{ display: 'flex', gap: 8 }}>
+    <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
       {LINKS.map((l) =>
         pathname === l.to ? (
           <div

@@ -6,6 +6,7 @@ import Icon from '../components/Icon'
 import { BlockModal, CostModal } from '../components/Modal'
 import { categoryStyle, TRIMESTER_STYLE } from '../data/categoryStyle'
 import { normalizeBlocks } from '../utils/blocks'
+import '../styles/protocol.css'
 
 export default function ProtocolPage({ protocol }) {
   const [expanded, setExpanded] = useState({})
@@ -23,23 +24,19 @@ export default function ProtocolPage({ protocol }) {
 
   return (
     <div style={{ minHeight: '100vh', fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: 'oklch(0.22 0.02 260)', paddingBottom: 80 }}>
-      <div style={{ maxWidth: 1360, margin: '0 auto', padding: '40px 48px 0' }}>
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 24, flexWrap: 'wrap', marginBottom: 28 }}>
+      <div className="protocol-container">
+        <div style={{ marginBottom: 24 }}>
           <Nav />
         </div>
 
         <div
+          className="protocol-header-card"
           style={{
             background: 'white',
             borderRadius: 20,
             boxShadow: '0 1px 3px oklch(0.2 0.02 260 / 0.08), 0 8px 24px oklch(0.2 0.02 260 / 0.05)',
             padding: '28px 32px',
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'flex-start',
-            gap: 24,
-            flexWrap: 'wrap',
-            marginBottom: 32,
+            marginBottom: 24,
           }}
         >
           <div>
@@ -50,7 +47,7 @@ export default function ProtocolPage({ protocol }) {
               {protocol.subtitle}
             </p>
           </div>
-          <div style={{ display: 'flex', gap: 20, flexWrap: 'wrap', flexShrink: 0 }}>
+          <div className="protocol-legend">
             {legendCategories.map((cat) => (
               <div key={cat.key} style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 13, fontWeight: 600, color: 'oklch(0.4 0.02 260)', whiteSpace: 'nowrap' }}>
                 <span style={{ width: 26, height: 26, borderRadius: '50%', background: cat.color, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
@@ -62,7 +59,7 @@ export default function ProtocolPage({ protocol }) {
           </div>
         </div>
 
-        <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', marginBottom: 32 }}>
+        <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', marginBottom: 24 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 13.5, fontWeight: 600, color: 'oklch(0.4 0.02 260)' }}>
             <span style={{ width: 22, height: 14, borderRadius: 4, background: 'oklch(0.94 0.02 150)', border: '1px solid oklch(0.55 0.1 150)', display: 'inline-block' }} />
             {protocol.requiredLegendLabel}
@@ -77,7 +74,7 @@ export default function ProtocolPage({ protocol }) {
         </div>
       </div>
 
-      <div style={{ overflowX: 'auto', padding: '0 48px 40px' }}>
+      <div className="protocol-track-wrap">
         <div style={{ display: 'flex', gap: 40, width: 'max-content', minWidth: '100%' }}>
           {protocol.trimesters.map((tri) => {
             const items = tri.items.filter((it) => showOptional || it.required)
@@ -98,7 +95,7 @@ export default function ProtocolPage({ protocol }) {
         </div>
       </div>
 
-      <div style={{ maxWidth: 1360, margin: '0 auto', padding: '0 48px' }}>
+      <div className="protocol-footer">
         <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', marginBottom: 16 }}>
           <div style={{ flex: 1, minWidth: 280, background: 'white', border: '1px solid oklch(0.9 0.008 260)', borderRadius: 14, padding: '18px 24px', display: 'flex', gap: 14, alignItems: 'flex-start' }}>
             <span style={{ width: 26, height: 26, borderRadius: '50%', background: 'oklch(0.9 0.02 260)', color: 'oklch(0.4 0.05 260)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 13, fontWeight: 700, flexShrink: 0 }}>
