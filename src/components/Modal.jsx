@@ -5,7 +5,7 @@ function Shell({ onClose, maxWidth, children }) {
       style={{
         position: 'fixed',
         inset: 0,
-        background: 'oklch(0.2 0.02 260 / 0.5)',
+        background: 'rgba(0, 0, 0, 0.5)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -16,14 +16,15 @@ function Shell({ onClose, maxWidth, children }) {
       <div
         onClick={(e) => e.stopPropagation()}
         style={{
-          background: 'white',
-          borderRadius: 16,
+          background: 'var(--card-bg)',
+          borderRadius: 'var(--radius-modal)',
           maxWidth,
           width: '100%',
           maxHeight: '80vh',
           overflowY: 'auto',
           padding: 32,
           boxSizing: 'border-box',
+          border: '1px solid var(--border-subtle)',
         }}
       >
         {children}
@@ -35,11 +36,12 @@ function Shell({ onClose, maxWidth, children }) {
 function Header({ title, onClose }) {
   return (
     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 16, gap: 16 }}>
-      <h2 style={{ fontSize: 22, fontWeight: 700, margin: 0 }}>{title}</h2>
+      <h2 style={{ fontSize: 22, fontWeight: 700, margin: 0, color: 'var(--text-primary)' }}>{title}</h2>
       <button
         onClick={onClose}
         style={{
-          background: 'oklch(0.95 0.005 260)',
+          background: 'var(--accent-soft-bg)',
+          color: 'var(--text-secondary)',
           border: 'none',
           borderRadius: '50%',
           width: 32,
@@ -63,35 +65,35 @@ export function BlockModal({ open, onClose, title, blocks }) {
       {blocks.map((block, i) => {
         if (block.isHeader) {
           return (
-            <div key={i} style={{ fontSize: 14.5, fontWeight: 700, color: 'oklch(0.25 0.02 260)', margin: '16px 0 8px' }}>
+            <div key={i} style={{ fontSize: 14.5, fontWeight: 700, color: 'var(--text-primary)', margin: '16px 0 8px' }}>
               {block.text}
             </div>
           )
         }
         if (block.isBullet) {
           return (
-            <div key={i} style={{ fontSize: 13.5, lineHeight: 1.6, color: 'oklch(0.35 0.02 260)', paddingLeft: 16, position: 'relative', marginBottom: 6 }}>
-              <span style={{ position: 'absolute', left: 0 }}>–</span>{block.text}
+            <div key={i} style={{ fontSize: 13.5, lineHeight: 1.6, color: 'var(--text-secondary)', paddingLeft: 16, position: 'relative', marginBottom: 6 }}>
+              <span style={{ position: 'absolute', left: 0 }}>•</span>{block.text}
             </div>
           )
         }
         if (block.isSubBullet) {
           return (
-            <div key={i} style={{ fontSize: 13.5, lineHeight: 1.6, color: 'oklch(0.35 0.02 260)', paddingLeft: 34, position: 'relative', marginBottom: 6 }}>
-              <span style={{ position: 'absolute', left: 16 }}>–</span>{block.text}
+            <div key={i} style={{ fontSize: 13.5, lineHeight: 1.6, color: 'var(--text-secondary)', paddingLeft: 34, position: 'relative', marginBottom: 6 }}>
+              <span style={{ position: 'absolute', left: 16 }}>•</span>{block.text}
             </div>
           )
         }
         if (block.isNumbered) {
           return (
-            <div key={i} style={{ fontSize: 13.5, lineHeight: 1.6, color: 'oklch(0.35 0.02 260)', paddingLeft: 20, position: 'relative', marginBottom: 6 }}>
+            <div key={i} style={{ fontSize: 13.5, lineHeight: 1.6, color: 'var(--text-secondary)', paddingLeft: 20, position: 'relative', marginBottom: 6 }}>
               <span style={{ position: 'absolute', left: 0, fontWeight: 600 }}>{block.num}.</span>{block.text}
             </div>
           )
         }
         return (
-          <p key={i} style={{ fontSize: 13.5, lineHeight: 1.6, color: 'oklch(0.35 0.02 260)', margin: '0 0 10px' }}>
-            <strong>{block.lead}</strong>{block.text}
+          <p key={i} style={{ fontSize: 13.5, lineHeight: 1.6, color: 'var(--text-secondary)', margin: '0 0 10px' }}>
+            <strong style={{ color: 'var(--text-primary)' }}>{block.lead}</strong>{block.text}
           </p>
         )
       })}
@@ -112,7 +114,7 @@ export function CostModal({ open, onClose, title, sections }) {
           {section.paragraphs.map((html, j) => (
             <p
               key={j}
-              style={{ fontSize: 14.5, lineHeight: 1.6, color: 'oklch(0.35 0.02 260)', margin: j < section.paragraphs.length - 1 ? '0 0 8px' : 0 }}
+              style={{ fontSize: 14.5, lineHeight: 1.6, color: 'var(--text-secondary)', margin: j < section.paragraphs.length - 1 ? '0 0 8px' : 0 }}
               dangerouslySetInnerHTML={{ __html: html }}
             />
           ))}

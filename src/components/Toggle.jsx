@@ -13,7 +13,8 @@ export default function Toggle({ checked, onChange }) {
         border: 'none',
         padding: 0,
         display: 'inline-block',
-        background: checked ? 'oklch(0.62 0.11 285)' : 'oklch(0.85 0.01 260)',
+        background: checked ? 'var(--accent)' : 'var(--border-subtle)',
+        transition: 'background .15s',
       }}
     >
       <span

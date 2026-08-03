@@ -23,9 +23,20 @@ const paths = {
       <path d="M6 16l2 2" />
     </>
   ),
+  brand: (
+    <>
+      <circle cx="12" cy="7" r="4" />
+      <path d="M8.5 10.5C6 11.5 4 14 4 17.5c0 1.5 1 2.5 2.5 2.5h11c1.5 0 2.5-1 2.5-2.5 0-3.5-2-6-4.5-7" />
+      <path d="M12 14v3" />
+    </>
+  ),
+  moon: <path d="M21 12.5A8.5 8.5 0 1 1 11.5 3a7 7 0 0 0 9.5 9.5Z" />,
+  bookmark: <path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1Z" />,
+  chevronDown: <path d="m6 9 6 6 6-6" />,
+  check: <path d="M20 6 9 17l-5-5" />,
 }
 
-export default function Icon({ kind, size = 17, color = 'white' }) {
+export default function Icon({ kind, size = 17, color = 'currentColor', strokeWidth = 2, fill = 'none', style }) {
   const content = paths[kind]
   if (!content) return null
   return (
@@ -33,11 +44,12 @@ export default function Icon({ kind, size = 17, color = 'white' }) {
       width={size}
       height={size}
       viewBox="0 0 24 24"
-      fill="none"
+      fill={fill}
       stroke={color}
-      strokeWidth="2"
+      strokeWidth={strokeWidth}
       strokeLinecap="round"
       strokeLinejoin="round"
+      style={style}
     >
       {content}
     </svg>

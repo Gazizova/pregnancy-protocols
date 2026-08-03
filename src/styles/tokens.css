@@ -1,48 +1,94 @@
 :root {
+  /* Base palette */
+  --page-bg: #F4F4FB;
+  --card-bg: #FFFFFF;
+  --text-primary: #14142B;
+  --text-secondary: #6E7191;
+  --text-tertiary: #A0A3BD;
+  --border-subtle: #E4E4EF;
+  --accent: #4F46E5;
+  --accent-soft-bg: #EEF0FD;
+  --accent-hover: #4338CA;
+
   /* Categories */
-  --cat-analysis-bg: oklch(0.95 0.035 165);
-  --cat-analysis-text: oklch(0.4 0.09 165);
-  --cat-analysis-dot: oklch(0.64 0.1 165);
+  --cat-lab-bg: #DCFCE7;
+  --cat-lab-text: #15803D;
+  --cat-lab-dot: #16A34A;
 
-  --cat-uzd-bg: oklch(0.95 0.03 285);
-  --cat-uzd-text: oklch(0.42 0.1 285);
-  --cat-uzd-dot: oklch(0.62 0.11 285);
+  --cat-usg-bg: #EDE9FE;
+  --cat-usg-text: #6D28D9;
+  --cat-usg-dot: #7C3AED;
 
-  --cat-visit-bg: oklch(0.95 0.035 55);
-  --cat-visit-text: oklch(0.45 0.09 55);
-  --cat-visit-dot: oklch(0.68 0.1 55);
+  --cat-visit-bg: #FFEDD5;
+  --cat-visit-text: #C2410C;
+  --cat-visit-dot: #EA580C;
 
-  --cat-vaccine-bg: oklch(0.95 0.035 15);
-  --cat-vaccine-text: oklch(0.45 0.1 15);
-  --cat-vaccine-dot: oklch(0.65 0.1 15);
+  --cat-vaccine-bg: #FCE7F3;
+  --cat-vaccine-text: #BE185D;
+  --cat-vaccine-dot: #DB2777;
 
-  --status-required: oklch(0.5 0.1 165);
-  --status-optional: oklch(0.58 0.12 55);
+  --status-required: #16A34A;
+  --status-optional: #EA580C;
 
   /* Trimesters */
-  --tri1-bg: oklch(0.96 0.025 165);
-  --tri1-accent: oklch(0.42 0.09 165);
-  --tri2-bg: oklch(0.96 0.025 55);
-  --tri2-accent: oklch(0.46 0.09 55);
-  --tri3-bg: oklch(0.96 0.02 285);
-  --tri3-accent: oklch(0.42 0.08 285);
-
-  /* Neutrals */
-  --text-primary: oklch(0.22 0.02 260);
-  --text-secondary: oklch(0.5 0.02 260);
-  --page-bg: oklch(0.96 0.012 130);
-  --card-bg: #fff;
+  --tri1-bg: #DCFCE7;
+  --tri1-accent: #15803D;
+  --tri2-bg: #FFEDD5;
+  --tri2-accent: #C2410C;
+  --tri3-bg: #EDE9FE;
+  --tri3-accent: #6D28D9;
 
   /* Radius */
-  --radius-card: 22px;
-  --radius-band: 20px;
+  --radius-card: 20px;
+  --radius-band: 16px;
   --radius-modal: 16px;
   --radius-pill: 999px;
 
   /* Shadows */
-  --shadow-card: 0 1px 2px oklch(0.2 0.02 260 / 0.03), 0 10px 24px oklch(0.2 0.02 260 / 0.05);
-  --shadow-header: 0 1px 3px oklch(0.2 0.02 260 / 0.08), 0 8px 24px oklch(0.2 0.02 260 / 0.05);
+  --shadow-card: 0 1px 2px rgba(20, 20, 43, 0.03), 0 8px 20px rgba(20, 20, 43, 0.06);
+  --shadow-header: 0 1px 3px rgba(20, 20, 43, 0.05), 0 8px 24px rgba(20, 20, 43, 0.06);
 
   /* Typography */
   --font-base: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+:root[data-theme='dark'] {
+  --page-bg: #121220;
+  --card-bg: #1B1B2C;
+  --text-primary: #F1F1F7;
+  --text-secondary: #9997B5;
+  --text-tertiary: #6E7191;
+  --border-subtle: #2E2E46;
+  --accent: #818CF8;
+  --accent-soft-bg: #2A2A45;
+  --accent-hover: #A5B4FC;
+
+  --cat-lab-bg: rgba(22, 163, 74, 0.18);
+  --cat-lab-text: #4ADE80;
+  --cat-lab-dot: #4ADE80;
+
+  --cat-usg-bg: rgba(124, 58, 237, 0.22);
+  --cat-usg-text: #A78BFA;
+  --cat-usg-dot: #A78BFA;
+
+  --cat-visit-bg: rgba(234, 88, 12, 0.2);
+  --cat-visit-text: #FB923C;
+  --cat-visit-dot: #FB923C;
+
+  --cat-vaccine-bg: rgba(219, 39, 119, 0.2);
+  --cat-vaccine-text: #F472B6;
+  --cat-vaccine-dot: #F472B6;
+
+  --status-required: #4ADE80;
+  --status-optional: #FB923C;
+
+  --tri1-bg: rgba(22, 163, 74, 0.16);
+  --tri1-accent: #4ADE80;
+  --tri2-bg: rgba(234, 88, 12, 0.18);
+  --tri2-accent: #FB923C;
+  --tri3-bg: rgba(124, 58, 237, 0.2);
+  --tri3-accent: #A78BFA;
+
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.2), 0 8px 20px rgba(0, 0, 0, 0.3);
+  --shadow-header: 0 1px 3px rgba(0, 0, 0, 0.25), 0 8px 24px rgba(0, 0, 0, 0.3);
 }

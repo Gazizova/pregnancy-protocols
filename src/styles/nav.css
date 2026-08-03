@@ -1,0 +1,5 @@
+@media (max-width: 560px) {
+  .nav-pill-group {
+    border-radius: 18px !important;
+  }
+}
