@@ -1,6 +1,6 @@
 .protocol-container {
-  max-width: 1440px;
-  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
   padding: 40px 48px 0;
 }
 
@@ -10,8 +10,8 @@
 }
 
 .protocol-footer {
-  max-width: 1440px;
-  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
   padding: 0 48px;
 }
 

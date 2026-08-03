@@ -30,18 +30,20 @@ export default function TrimesterTrack({ trimester, items, protocol, expanded, o
       </div>
 
       <div style={{ position: 'relative', display: 'flex', gap: 16, alignItems: 'flex-start' }}>
-        <div
-          style={{
-            position: 'absolute',
-            left: 0,
-            right: 8,
-            top: 17,
-            height: 2,
-            background: trimester.accent,
-            opacity: 0.35,
-            zIndex: 0,
-          }}
-        />
+        <svg
+          viewBox="0 0 100 40"
+          preserveAspectRatio="none"
+          style={{ position: 'absolute', left: 0, right: 8, top: 0, width: 'calc(100% - 8px)', height: 34, zIndex: 0 }}
+        >
+          <path
+            d="M0,20 Q 8,4 16,20 T 32,20 T 48,20 T 64,20 T 80,20 T 96,20 T 112,20"
+            fill="none"
+            stroke={trimester.accent}
+            strokeOpacity="0.4"
+            strokeWidth="1.6"
+            strokeLinecap="round"
+          />
+        </svg>
         <span
           style={{
             position: 'absolute',
