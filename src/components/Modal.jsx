@@ -73,7 +73,9 @@ export function BlockModal({ open, onClose, title, blocks }) {
         if (block.isBullet) {
           return (
             <div key={i} style={{ fontSize: 13.5, lineHeight: 1.6, color: 'var(--text-secondary)', paddingLeft: 16, position: 'relative', marginBottom: 6 }}>
-              <span style={{ position: 'absolute', left: 0 }}>•</span>{block.text}
+              <span style={{ position: 'absolute', left: 0 }}>•</span>
+              {block.lead && <strong style={{ color: 'var(--text-primary)' }}>{block.lead}</strong>}
+              {block.text}
             </div>
           )
         }
