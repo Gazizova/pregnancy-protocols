@@ -130,7 +130,29 @@ function CardExpandedContent({ item, protocol, onOpenModal }) {
   }
 
   if (item.descRaw) {
-    return <Blocks blocks={normalizeBlocks(item.descRaw)} />
+    return (
+      <>
+        <Blocks blocks={normalizeBlocks(item.descRaw)} />
+        {item.hasNiptDetails && (
+          <button
+            onClick={() => onOpenModal('niptDetails')}
+            style={{
+              cursor: 'pointer',
+              fontSize: 13,
+              fontWeight: 700,
+              color: 'var(--accent)',
+              background: 'none',
+              border: 'none',
+              padding: 0,
+              margin: '0 0 16px',
+              textDecoration: 'underline',
+            }}
+          >
+            Детальніше про НІПТ
+          </button>
+        )}
+      </>
+    )
   }
 
   return (
